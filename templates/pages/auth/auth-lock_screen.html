@@ -1,9 +1,9 @@
-@@include('./partials/main.html')
+{% include 'partials/main.html' %}
 
     <head>
-        @@include("partials/title-meta.html", {"title": "Lock Screen"})
+        {% include 'partials/title-meta.html' %}
 
-		@@include('./partials/head-css.html')
+		{% include 'partials/head-css.html' %}
     </head>
 
     <body class="authentication-bg authentication-bg-pattern">
@@ -18,22 +18,22 @@
                                 
                                 <div class="text-center mb-4">
                                     <div class="auth-brand">
-                                        <a href="index.html" class="logo logo-dark text-center">
+                                        <a href="{{ url_for('index') }}" class="logo logo-dark text-center">
                                             <span class="logo-lg">
-                                                <img src="assets/images/logo-dark.png" alt="" height="22">
+                                                <img src="{{ url_for('static', filename='images/logo-dark.png') }}" alt="" height="22">
                                             </span>
                                         </a>
                     
-                                        <a href="index.html" class="logo logo-light text-center">
+                                        <a href="{{ url_for('index') }}" class="logo logo-light text-center">
                                             <span class="logo-lg">
-                                                <img src="assets/images/logo-light.png" alt="" height="22">
+                                                <img src="{{ url_for('static', filename='images/logo-light.png') }}" alt="" height="22">
                                             </span>
                                         </a>
                                     </div>
                                 </div>
 
                                 <div class="text-center w-75 m-auto">
-                                    <img src="assets/images/users/user-1.jpg" height="88" alt="user-image" class="rounded-circle shadow">
+                                    <img src="{{ url_for('static', filename='images/users/user-1.jpg') }}" height="88" alt="user-image" class="rounded-circle shadow">
                                     <h4 class="text-dark-50 text-center mt-3">Hi ! Geneva </h4>
                                     <p class="text-muted mb-4">Enter your password to access the admin.</p>
                                 </div>
@@ -58,7 +58,7 @@
 
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <p class="text-white-50">Not you? return <a href="auth-login.html" class="text-white ms-1"><b>Sign In</b></a></p>
+                                <p class="text-white-50">Not you? return <a href="{{ url_for('login') }}" class="text-white ms-1"><b>Sign In</b></a></p>
                             </div> <!-- end col -->
                         </div>
                         <!-- end row -->

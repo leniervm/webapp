@@ -1,9 +1,9 @@
-@@include('./partials/main.html')
+{% include 'partials/main.html' %}
 
 <head>
-    @@include("partials/title-meta.html", {"title": "Confirm Email"})
+    {% include 'partials/title-meta.html' %}
 
-    @@include('./partials/head-css.html')
+	{% include 'partials/head-css.html' %}
 </head>
 
 <body class="authentication-bg authentication-bg-pattern">
@@ -16,15 +16,15 @@
                         <div class="card-body p-4">
                             <div class="text-center w-75 m-auto">
                                 <div class="auth-brand">
-                                    <a href="index.html" class="logo logo-dark text-center">
+                                    <a href="{{ url_for('index') }}" class="logo logo-dark text-center">
                                         <span class="logo-lg">
-                                            <img src="assets/images/logo-dark.png" alt="" height="22">
+                                            <img src="{{ url_for('static', filename='images/logo-dark.png') }}" alt="" height="22">
                                         </span>
                                     </a>
-
-                                    <a href="index.html" class="logo logo-light text-center">
+                
+                                    <a href="{{ url_for('index') }}" class="logo logo-light text-center">
                                         <span class="logo-lg">
-                                            <img src="assets/images/logo-light.png" alt="" height="22">
+                                            <img src="{{ url_for('static', filename='images/logo-light.png') }}" alt="" height="22">
                                         </span>
                                     </a>
                                 </div>
@@ -86,7 +86,7 @@
                                     Please check for an email from company and click on the included link to
                                     reset your password. </p>
 
-                                <a href="index.html" class="btn w-100 btn-pink waves-effect waves-light mt-3">Back to Home</a>
+                                <a href="{{ url_for('login') }}"" class="btn w-100 btn-pink waves-effect waves-light mt-3">Back to Home</a>
                             </div>
 
                         </div> <!-- end card-body -->
@@ -106,10 +106,6 @@
         2015 -
         <script>document.write(new Date().getFullYear())</script> &copy; UBold theme by <a href="" class="text-white-50">Coderthemes</a>
     </footer>
-
-    @@include('./partials/right-sidebar.html')
-        
-    @@include('./partials/footer-scripts.html')
 
 </body>
 
