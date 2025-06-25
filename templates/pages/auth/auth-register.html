@@ -1,9 +1,9 @@
-@@include('./partials/main.html')
+{% include 'partials/main.html' %}
 
 <head>
-    @@include("partials/title-meta.html", {"title": "Register & Signup"})
+    {% include 'partials/title-meta.html' %}
 
-    @@include('./partials/head-css.html')
+	{% include 'partials/head-css.html' %}
 
 </head>
 
@@ -19,15 +19,15 @@
 
                             <div class="text-center w-75 m-auto">
                                 <div class="auth-brand">
-                                    <a href="index.html" class="logo logo-dark text-center">
+                                    <a href="{{ url_for('index') }}" class="logo logo-dark text-center">
                                         <span class="logo-lg">
-                                            <img src="assets/images/logo-dark.png" alt="" height="22">
+                                            <img src="{{ url_for('static', filename='images/logo-dark.png') }}" alt="" height="22">
                                         </span>
                                     </a>
-
-                                    <a href="index.html" class="logo logo-light text-center">
+                    
+                                    <a href="{{ url_for('index') }}" class="logo logo-light text-center">
                                         <span class="logo-lg">
-                                            <img src="assets/images/logo-light.png" alt="" height="22">
+                                            <img src="{{ url_for('static', filename='images/logo-light.png') }}" alt="" height="22">
                                         </span>
                                     </a>
                                 </div>
@@ -89,7 +89,7 @@
 
                     <div class="row mt-3">
                         <div class="col-12 text-center">
-                            <p class="text-white-50">Already have account? <a href="auth-login.html" class="text-white ms-1"><b>Sign In</b></a></p>
+                            <p class="text-white-50">Already have account? <a href="{{ url_for('login') }}" class="text-white ms-1"><b>Sign In</b></a></p>
                         </div> <!-- end col -->
                     </div>
                     <!-- end row -->
@@ -107,12 +107,8 @@
         <script>document.write(new Date().getFullYear())</script> &copy; UBold theme by <a href="" class="text-white-50">Coderthemes</a>
     </footer>
 
-    @@include('./partials/right-sidebar.html')
-        
-    @@include('./partials/footer-scripts.html')
-
     <!-- Authentication js -->
-    <script src="assets/js/pages/authentication.init.js"></script>
+    <!--<script src="{{ url_for('static', filename='js/pages/authentication.init.js') }}"></script>-->
 
 </body>
 
